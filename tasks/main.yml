@@ -1,4 +1,4 @@
-- name: Set hostname FQDN variable
+- name: Temp override for "hostname_fqdn"
   set_fact:
     hostname_fqdn  : "{{ inventory_hostname }}"
   when: hostname_fqdn is not defined
@@ -16,7 +16,12 @@
 
 - name: Set machine hostname
   hostname:
-    name: "{{hostname_short}}"
+    name: "{{ hostname_short }}"
+
+- name: Temp override facts "hostname_short"
+  set_fact:
+    ansible_hostname  : "{{ hostname_short }}"
+  when: ansible_hostname != hostname_short
 
 - name: Ensure hostname is in /etc/hostname
   copy:
