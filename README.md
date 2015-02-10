@@ -1,6 +1,8 @@
 ansible-hostname role
 =====================
 
+A role to manage hostnames. This roles does a number of different things in non traditional way. Besides doing the obvious of changing the hostname and changing the hosts file. It overrides facts for first run of anisble_facts very useful if you provision machine in cloud and ansible facts would cache provisioned hostname. It has many option on how to handle what is short name and what is fqdn.
+
 Requirements
 ------------
 tested on Ubuntu 12.04 and ansible > 1.6
