@@ -37,4 +37,4 @@
     regexp: "{{item.regexp}}"
     line: "{{item.line}}"
     state: present
-  with_items: hostname_hosts_file
+  with_items: "{{hostname_hosts_file}}"
